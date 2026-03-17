@@ -63,6 +63,7 @@ num-traits.workspace = true
 tempfile = { workspace = true, optional = true }
 bincode.workspace = true
 reqwest.workspace = true
+quinn-proto.workspace = true
 eyre.workspace = true
 
 [dev-dependencies]
