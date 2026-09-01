@@ -175,7 +175,15 @@ impl AnyNode {
                 .into_ipv4_mapped();
                 Some(node_record)
             }
-            Self::PeerId(_) => None,
+            Self::PeerId(_) | Self::TrustedPeer(_) => None,
+        }
+    }
+
+    /// Returns the [`TrustedPeer`] if this is a `TrustedPeer` variant.
+    pub const fn trusted_peer(&self) -> Option<&TrustedPeer> {
+        match self {
+            Self::TrustedPeer(peer) => Some(peer),
+            _ => None,
         }
     }
 }
